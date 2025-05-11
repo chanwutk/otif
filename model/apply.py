@@ -101,7 +101,7 @@ def f(fname):
 	windows = []
 	FNULL = open(os.devnull, 'w')
 	pipe = subprocess.Popen([
-		'ffmpeg', '-nostdin',
+		'ffmpeg', '-hide_banner', '-loglevel', 'warning', '-nostdin',
 		'-i', video_path+fname,
 		'-vf', 'scale={}x{}'.format(width, height),
 		'-c:v', 'rawvideo', '-pix_fmt', 'rgb24', '-f', 'rawvideo',

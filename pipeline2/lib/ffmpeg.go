@@ -19,7 +19,7 @@ type FfmpegReader struct {
 
 func ReadFfmpeg(fname string, width int, height int) *FfmpegReader {
 	cmd := exec.Command(
-		"ffmpeg",
+		"ffmpeg", "-hide_banner", "-loglevel", "warning",
 		"-threads", "2",
 		"-i", fname,
 		"-c:v", "rawvideo", "-pix_fmt", "rgb24", "-f", "rawvideo",

@@ -40,7 +40,7 @@ for fname in os.listdir(video_path):
 		detections = json.load(f)
 	FNULL = open(os.devnull, 'w')
 	pipe = subprocess.Popen([
-		'ffmpeg', '-threads', '2', '-nostdin',
+		'ffmpeg', '-hide_banner', '-loglevel', 'warning', '-threads', '2', '-nostdin',
 		'-i', os.path.join(video_path, str(id)+'.mp4'),
 		'-vf', 'scale={}x{}'.format(orig_dims[0], orig_dims[1]),
 		'-c:v', 'rawvideo', '-pix_fmt', 'rgb24', '-f', 'rawvideo',

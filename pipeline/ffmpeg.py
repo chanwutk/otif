@@ -7,7 +7,7 @@ class Ffmpeg(object):
 		self.FNULL = open(os.devnull, 'w')
 		self.width, self.height = width, height
 		self.pipe = subprocess.Popen([
-			'ffmpeg', '-threads', '2', '-nostdin',
+			'ffmpeg', '-hide_banner', '-loglevel', 'warning', '-threads', '2', '-nostdin',
 			'-i', fname,
 			'-vf', 'scale={}x{}'.format(width, height),
 			'-c:v', 'rawvideo', '-pix_fmt', 'rgb24', '-f', 'rawvideo',

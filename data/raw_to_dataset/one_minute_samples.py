@@ -41,7 +41,7 @@ for ds_id in ['amsterdam', 'jackson']:
             if not all([os.path.exists(fname) for fname in fnames]):
                 print('skip {}/{} since some not exist'.format(label, id))
                 continue
-            ffmpeg_args = ['ffmpeg']
+            ffmpeg_args = ['ffmpeg', '-hide_banner', '-loglevel', 'warning']
             for fname in fnames:
                 ffmpeg_args.extend(['-i', fname])
             ffmpeg_args.append('-filter_complex')

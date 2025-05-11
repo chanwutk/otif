@@ -93,7 +93,7 @@ picked_video_ids = set([location[0] for location in picked_frames.keys()])
 for video_id in picked_video_ids:
 	FNULL = open(os.devnull, 'w')
 	pipe = subprocess.Popen([
-		'ffmpeg', '-threads', '2', '-nostdin',
+		'ffmpeg', '-hide_banner', '-loglevel', 'warning', '-threads', '2', '-nostdin',
 		'-i', '{}/{}.mp4'.format(video_path, video_id),
 		'-vf', 'scale={}x{}'.format(width, height),
 		'-c:v', 'rawvideo', '-pix_fmt', 'rgb24', '-f', 'rawvideo',

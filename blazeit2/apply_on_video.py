@@ -38,7 +38,7 @@ scores = []
 for fname in os.listdir(video_path):
 	FNULL = open(os.devnull, 'w')
 	pipe = subprocess.Popen([
-		'ffmpeg', '-threads', '2', '-nostdin',
+		'ffmpeg', '-hide_banner', '-loglevel', 'warning', '-threads', '2', '-nostdin',
 		'-i', os.path.join(video_path, fname),
 		'-vf', 'scale={}x{}'.format(width, height),
 		'-c:v', 'rawvideo', '-pix_fmt', 'rgb24', '-f', 'rawvideo',

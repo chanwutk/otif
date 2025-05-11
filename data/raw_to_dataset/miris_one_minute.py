@@ -16,5 +16,5 @@ for ds_name in ['shibuya', 'warsaw']:
         out_path = os.path.join(data_root, 'dataset', ds_name, split, 'video/')
 
         for i in range(50):
-            ffmpeg_args = ['ffmpeg', '-ss', str(60*i), '-i', video_fname, '-t', '60', os.path.join(out_path, '{}.mp4'.format(i))]
+            ffmpeg_args = ['ffmpeg', '-hide_banner', '-loglevel', 'warning', '-ss', str(60*i), '-i', video_fname, '-t', '60', os.path.join(out_path, '{}.mp4'.format(i))]
             subprocess.call(ffmpeg_args)

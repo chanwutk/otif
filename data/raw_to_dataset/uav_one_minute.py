@@ -16,6 +16,6 @@ out_path = '/data2/blazeit/multiscope-test-set/uav/train/video/'
 counter = 0
 for fname, minutes in video_fnames.items():
     for min in range(minutes):
-        ffmpeg_args = ['ffmpeg', '-ss', str(60*min), '-i', video_dir+fname, '-t', '60', out_path+str(counter)+'.mp4']
+        ffmpeg_args = ['ffmpeg', '-hide_banner', '-loglevel', 'warning', '-ss', str(60*min), '-i', video_dir+fname, '-t', '60', out_path+str(counter)+'.mp4']
         subprocess.call(ffmpeg_args)
         counter += 1

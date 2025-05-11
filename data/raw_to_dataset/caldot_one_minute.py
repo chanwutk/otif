@@ -38,5 +38,5 @@ for ds_id in ['caldot1', 'caldot2']:
 		cur_segments = segments[0:60]
 		segments = segments[60:]
 		for i, (fname, skip) in enumerate(cur_segments):
-			ffmpeg_args = ['ffmpeg', '-ss', str(skip), '-i', video_path+fname, '-t', '60', out_path+str(i)+'.mp4']
+			ffmpeg_args = ['ffmpeg', '-hide_banner', '-loglevel', 'warning', '-ss', str(skip), '-i', video_path+fname, '-t', '60', out_path+str(i)+'.mp4']
 			subprocess.call(ffmpeg_args)
