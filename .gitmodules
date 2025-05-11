@@ -1,0 +1,4 @@
+[submodule "python/darknet"]
+	path = python/darknet
+	url = https://github.com/chanwutk/darknet.git
+	branch = otif/default
