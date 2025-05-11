@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/mitroadmaps/gomapinfer/common"
 
-	"./lib"
+	"pipeline2/lib"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"

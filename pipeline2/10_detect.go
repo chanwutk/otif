@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./lib"
+	"pipeline2/lib"
 
 	"encoding/json"
 	"fmt"
