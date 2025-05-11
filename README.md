@@ -24,27 +24,25 @@ The dataset consists of these components:
 Installation
 ------------
 
-Clone this repository:
+Setup Docker
+```sh
+docker compose up --detach --build
+```
 
-	git clone https://github.com/favyen/otif
+Also build darknet (YOLOv3 object detector):
 
-Also clone and build darknet-alexey (YOLOv3 object detector):
-
-	cd /path/to/otif-dataset/
-	git clone https://github.com/AlexeyAB/darknet darknet-alexey/
-	cd darknet-alexey/
-	git checkout ecad770071eb776208a46977347e6d2410d4f50e
+	cd python/darknet
+	# 1. Modify GPU=1
+	# 2. Modify CUDNN=1
+	# 3. Modify LIBSO=1
+	# 4. Uncommment one of the lines 29-50 depending on your GPU.
 	make
 
 Setup conda environment:
 
-	conda create -n otif python=3.6
+	conda init bash
+	conda env create -f environment.yml
 	conda activate otif
-	pip install scikit-image 'tensorflow<2.0'
-
-Install Go, ffmpeg:
-
-	sudo apt install golang ffmpeg
 
 
 Run Experiments

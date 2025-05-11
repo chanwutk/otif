@@ -1,0 +1,10 @@
+name: otif
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.6
+  - pip
+  - pip:
+      - scikit-image
+      - 'tensorflow<2.0'

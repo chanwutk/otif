@@ -14,9 +14,8 @@ threshold = float(sys.argv[7])
 classes = sys.argv[8]
 label = sys.argv[9]
 
-os.chdir(os.path.join(data_root, 'darknet-alexey/'))
-sys.path.append('./')
-import darknet
+os.chdir('/otif/python/darknet')
+from darknet import darknet
 
 def eprint(s):
 	sys.stderr.write(str(s) + "\n")

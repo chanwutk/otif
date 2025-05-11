@@ -1,0 +1,19 @@
+services:
+  eval:
+    build: .
+    container_name: otif
+    tty: true
+    environment:
+      - TERM=xterm-256color
+    volumes:
+      - .:/otif
+      # Change /data/chawutk/otif-dataset to your local path
+      - /data/chanwutk/data/otif-dataset:/path/to/otif-dataset
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    network_mode: "host"

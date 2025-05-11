@@ -1,5 +1,5 @@
 import numpy
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 #tf.disable_eager_execution()
 import os
 import os.path
