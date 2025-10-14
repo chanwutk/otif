@@ -38,12 +38,6 @@ Also build darknet (YOLOv3 object detector):
 	# 4. Uncommment one of the lines 29-50 depending on your GPU.
 	make
 
-Setup conda environment:
-
-	conda init bash
-	conda env create -f environment.yml
-	conda activate otif
-
 
 Run Experiments
 ---------------
